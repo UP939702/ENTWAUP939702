@@ -1,0 +1,14 @@
+pers\AbstractFacade.class
+ents\books.class
+ctrl\AddUserBean.class
+ctrl\searchBookBean.class
+pers\booksFacade.class
+com\mycompany\up939702entwa\JAXRSConfiguration.class
+ents\orders.class
+bus\UserService.class
+bus\AddUserService.class
+ctrl\SearchUserBean.class
+pers\UserAccountsFacade.class
+bus\searchB.class
+pers\ordersFacade.class
+ents\UserAccounts.class
