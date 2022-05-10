@@ -5,8 +5,9 @@
 package ctrl;
 
 import bus.UserService;
+import java.io.Serializable;
 import javax.ejb.EJB;
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 /**
@@ -14,8 +15,9 @@ import javax.inject.Named;
  * @author roryj
  */
 @Named(value = "searchUserBean")
-@RequestScoped
-public class SearchUserBean {
+
+@SessionScoped
+public class SearchUserBean implements Serializable{
 
     /**
      * Creates a new instance of SearchUserBean
@@ -49,11 +51,13 @@ public class SearchUserBean {
 //        String account = us.doesUserExist(email);
 //        return account;
 //    }
-  
+
+    
     public String logInCheck() {
 
         String acceptUser = this.us.searchRecord(this.email,this.password);
         if (acceptUser != null) {
+            logIn(acceptUser);
             System.out.println("log in success");
             return "/start.xhtml?faces-redirect=true";
         } else {
@@ -63,6 +67,27 @@ public class SearchUserBean {
         }
         
     }
+    private String activeUser;
+
+
+    public String logIn(String user) {
+        this.activeUser = user;
+        return "";
+    }
+
+    public void logOut() {
+        activeUser = null;
+    }
+
+    public boolean isLoggedIn() {
+        return activeUser != null;
+    }
+
+    public String getActiveUser() {
+        return activeUser;
+    }
+ 
+
     
 }
 

@@ -34,25 +34,11 @@ public class SearchBookBean {
     private List<books> allBookNames = new ArrayList<>();     //Creates list of books that should be passed into the JSF page
     
     public List<books> getAllBookNames() {
+
         allBookNames = sb.findAllBookNames();                 // Uses the sb object to then query all of the books in the db
-        System.out.println(allBookNames + "ALL OFTHE NAMESSSSS");
+          
         return allBookNames;
     }
-////        
-//   
-//    private List<books> bookSearch = new ArrayList<>();
-//    
-//    public void setAllBookNames(List<books> allBookNames) {   
-//        this.allBookNames = allBookNames;
-//    }
-//    public String doFindBooks() {                             // This function is to take in a string from the user and then query the db for that book title
-//        String test= "11est";
-//         bookSearch = sb.findAllBookNames(test);
-//        return "";
-//    }
-    
-    
-    
 
-    
 }
+

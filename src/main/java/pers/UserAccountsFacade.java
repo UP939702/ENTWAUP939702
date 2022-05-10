@@ -36,12 +36,14 @@ public class UserAccountsFacade extends AbstractFacade<UserAccounts> {
 //        UserAccounts test = em.find(UserAccounts.class, email);
 //        Sys
 //        return test;
-        Query q = em.createNamedQuery("person.findByResidence");
+        Query q = em.createNamedQuery("person.logIn");
         q.setParameter("em", email);
         q.setParameter("pw", password);
         try {
             System.out.println(q.getSingleResult() + " :Current user");
-            return "";
+            String uSn = q.getSingleResult().toString();
+            
+            return uSn;
         }catch(Exception e){
             System.out.println("No account");
             return null;
