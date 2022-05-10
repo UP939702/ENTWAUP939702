@@ -18,7 +18,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @NamedQuery(name = "books.findByName", 
-            query = "SELECT b.title FROM books b WHERE :name LIKE b.title") // constructs sql query to search for a book to be used elsewhere in the program
+            query = "SELECT b FROM books b WHERE b.title LIKE :name") // constructs sql query to search for a book to be used elsewhere in the program
 
 
 
@@ -26,12 +26,6 @@ import javax.validation.constraints.NotNull;
 
 
 
-
-@NamedQuery(name = "books.findPrice", 
-            query = "SELECT b.quantity FROM books b WHERE :name LIKE b.title")  // constructs sql query to search for a book's cost to be used elsewhere in the program
-
-@NamedQuery(name = "books.quantity", 
-            query = "SELECT b.quantity FROM books b WHERE :name LIKE b.title")  // constructs sql query to search for a stock to be used elsewhere in the program
 
 public class books implements Serializable {
 

@@ -29,10 +29,18 @@ public class booksFacade extends AbstractFacade<books> {
     public booksFacade() {
         super(books.class);
     }
-     public List<String> findBookByName(String a) {
-        Query q = em.createNamedQuery("books.findByName");              // Creates the query that will search for a book
-        q.setParameter("name", a);                                      // assigns the passed variable to "name" for the command
-        return q.getResultList();                                       // Uses inbuilt function to return the list of results from db
+//     public List<String> findBookByName(String a) {
+//        Query q = em.createNamedQuery("books.findByName");              // Creates the query that will search for a book
+//        q.setParameter("name", a);                                      // assigns the passed variable to "name" for the command
+//        return q.getResultList();                                       // Uses inbuilt function to return the list of results from db
+//    }
+    public List<books> searchForBooks (String name) {
+        Query q = em.createNamedQuery("books.findByName");
+        q.setParameter("name", name);
+        List<books> dbReturn = q.getResultList();
+        System.out.println(dbReturn + "THIS IS THE RETURNLLLKDFJSDLFSDf");
+        return dbReturn;
+        
     }
     
     

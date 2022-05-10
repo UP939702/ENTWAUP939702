@@ -51,7 +51,7 @@ public class SearchUserBean {
 //    }
   
     public String logInCheck() {
-        System.out.println(this.email + "lolol");
+
         String acceptUser = this.us.searchRecord(this.email,this.password);
         if (acceptUser != null) {
             System.out.println("log in success");

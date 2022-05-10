@@ -26,8 +26,7 @@ public class SearchBookBean {
     private searchB sb;                     // Creates new searchBeasn object called "sb"
     public SearchBookBean() {
     }
-    private String search;
-    
+   
    
     
     
@@ -36,6 +35,7 @@ public class SearchBookBean {
     
     public List<books> getAllBookNames() {
         allBookNames = sb.findAllBookNames();                 // Uses the sb object to then query all of the books in the db
+        System.out.println(allBookNames + "ALL OFTHE NAMESSSSS");
         return allBookNames;
     }
 ////        
