@@ -19,13 +19,14 @@ import javax.enterprise.context.RequestScoped;
  */
 @Named(value = "searchBookBean")
 @RequestScoped
-public class searchBookBean {
+public class SearchBookBean {
 
  
     @EJB
     private searchB sb;                     // Creates new searchBeasn object called "sb"
-    public searchBookBean() {
+    public SearchBookBean() {
     }
+    private String search;
     
    
     
