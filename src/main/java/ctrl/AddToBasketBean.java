@@ -40,6 +40,13 @@ public class AddToBasketBean implements Serializable{
         basket.remove(b);
        
     }
+    public double total() {
+        double total = 0;
+        for(books b : this.basket) {
+            total += b.getPrice();
+        }
+        return total;
+    }
     
     
 }

@@ -27,7 +27,9 @@
                     <f:facet name="ATB">user</f:facet>
                     <h:commandButton value="Remove" action="#{addToBasketBean.removeFromBasket(b)}" />
                 </h:column>
+                
             </h:dataTable>
+            <h:outputText value="Basket total:  #{addToBasketBean.total()}" />
         </h:form>
     </h:body>
 </html>
