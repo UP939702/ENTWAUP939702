@@ -39,7 +39,7 @@ public class books implements Serializable {
     private String publisher;                           // table headings/attributes for each book
     private int edition;
     private int YOP;
-    private Long price;
+    private double price;
     private int quantity;
 
     public void setQuantity(int quantity) {
@@ -70,7 +70,7 @@ public class books implements Serializable {
         return YOP;
     }
 
-    public Long getPrice() {
+    public double getPrice() {
         return price;
     }
 

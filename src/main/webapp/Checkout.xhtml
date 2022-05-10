@@ -27,6 +27,14 @@
                     <h:commandButton value="Remove" action="#{addToBasketBean.removeFromBasket(b)}" />
                 </h:column>
             </h:dataTable>
+            
+        </h:form>
+        <h:form id="UserInfo">
+           
+            <h:inputText id="delivery" value="#{addToBasketBean.delivery}" /> 
+            <h:inputText id="payment" value="#{addToBasketBean.payment}" /> 
+            <h:inputText id="email" value="#{addToBasketBean.email}" /> 
+            <h:commandButton value="Pay" action="#{addToBasketBean.cO()}" />
         </h:form>
     </h:body>
 </html>

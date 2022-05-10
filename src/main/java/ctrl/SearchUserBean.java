@@ -7,9 +7,9 @@ package ctrl;
 import bus.UserService;
 import java.io.Serializable;
 import javax.ejb.EJB;
-import javax.ejb.Remove;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -69,9 +69,11 @@ public class SearchUserBean implements Serializable{
         
     }
     private String activeUser;
-
-
+  
+    
     public String logIn(String user) {
+       
+        
         this.activeUser = user;
         return "";
     }

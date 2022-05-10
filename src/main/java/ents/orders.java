@@ -5,6 +5,7 @@
 package ents;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,16 +24,52 @@ public class orders implements Serializable {
     private Long id;
     private String userEmail;
     private int quantity;                                       // table headings/attributes for each order
-    private Long price;
-    private int dateO;
+    private Date dateO;
+    private String status;
+    private String delivery;
+    private String payment;
+    private double total;
 
-    public void setDateO(int dateO) {
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getDelivery() {
+        return delivery;
+    }
+
+    public void setDelivery(String delivery) {
+        this.delivery = delivery;
+    }
+
+    public String getPayment() {
+        return payment;
+    }
+
+    public void setPayment(String payment) {
+        this.payment = payment;
+    }
+
+    public Date getDateO() {
+        return dateO;
+    }
+
+    public void setDateO(Date dateO) {
         this.dateO = dateO;
     }
 
-    public int getDateO() {
-        return dateO;
-    }
 
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
@@ -42,11 +79,7 @@ public class orders implements Serializable {
         this.quantity = quantity;
     }
 
-    public void setPrice(Long price) {
-        this.price = price;
-    }
 
-    
     public String getUserEmail() {
         return userEmail;
     }
@@ -55,9 +88,6 @@ public class orders implements Serializable {
         return quantity;
     }
 
-    public Long getPrice() {
-        return price;
-    }
 
     
     

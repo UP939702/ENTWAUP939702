@@ -3,7 +3,6 @@ ents\books.class
 ctrl\AddUserBean.class
 pers\booksFacade.class
 com\mycompany\up939702entwa\JAXRSConfiguration.class
-ents\orders.class
 bus\UserService.class
 bus\AddUserService.class
 pers\UserAccountsFacade.class
