@@ -53,7 +53,7 @@ public class SearchSpecificBookBean {
     public List<books> getSearchedNames() {
 
         allSearchedNames = this.sbs.searchBookRecords(this.searchbook);
-        System.out.println(allSearchedNames);
+        
 
         return allSearchedNames;
     } 

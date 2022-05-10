@@ -26,7 +26,6 @@ public class SearchBookService {
     
     public List<books> searchBookRecords (String name) {
         List<books> returnedBooks = bf.searchForBooks(name);
-        System.out.println(returnedBooks + "HERE IS THE BOOK");
         return returnedBooks;
     }
 }

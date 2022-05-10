@@ -38,7 +38,6 @@ public class booksFacade extends AbstractFacade<books> {
         Query q = em.createNamedQuery("books.findByName");
         q.setParameter("name", name);
         List<books> dbReturn = q.getResultList();
-        System.out.println(dbReturn + "THIS IS THE RETURNLLLKDFJSDLFSDf");
         return dbReturn;
         
     }
