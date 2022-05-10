@@ -32,5 +32,14 @@ public class AddToBasketBean implements Serializable{
         System.out.println(basket);
     }
     
+    public List<books> showBasket() {
+        return basket;
+    }
+    
+    public void removeFromBasket(books b) {
+        basket.remove(b);
+       
+    }
+    
     
 }

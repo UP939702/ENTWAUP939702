@@ -10,10 +10,17 @@
         <h:form id="searchForm">
             <h:inputText id="bookSearchbar"/> 
             <h:commandButton value="Search for book" />
+            <h:outputText value="#{searchUserBean.activeUser}" />
+            <h:commandButton value="Log out" action="#{searchUserBean.logOut()}" />
+            
         </h:form>
   
         <hr></hr>
+        
+        
+        
         <h:form id="displayAllBooks">
+            <h:commandButton value="Basket" action="UserBasket?faces-redirect=true"/>
             <h:dataTable value="#{searchBookBean.allBookNames}" var="b" border="1">
                 <h:column>
                     <f:facet name="header">Book names</f:facet>  

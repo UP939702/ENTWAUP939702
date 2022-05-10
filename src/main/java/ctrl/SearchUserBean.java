@@ -7,6 +7,7 @@ package ctrl;
 import bus.UserService;
 import java.io.Serializable;
 import javax.ejb.EJB;
+import javax.ejb.Remove;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -75,8 +76,11 @@ public class SearchUserBean implements Serializable{
         return "";
     }
 
-    public void logOut() {
+    public String logOut() {
         activeUser = null;
+    
+        return "/Login.xhtml?faces-redirect=true";
+        
     }
 
     public boolean isLoggedIn() {
