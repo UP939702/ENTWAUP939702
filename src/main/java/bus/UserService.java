@@ -26,15 +26,11 @@ public class UserService {
      * @param password
      * @return
      */
-    public String searchRecord (String email, String password) {
-        String userEmail = uaf.searchDBRecord(email, password);
+    public UserAccounts searchRecord (String email, String password) {
+        UserAccounts userEmail = uaf.searchDBRecord(email, password);
     
         return userEmail;
     } 
     
-    public String checkAdmin(String email) {
-        System.out.println(email + "WOW this sux");
-        String status = uaf.searchAdmin(email);
-        return status;
-    }
+    
 }

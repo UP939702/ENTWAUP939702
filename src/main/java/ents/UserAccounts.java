@@ -20,7 +20,7 @@ import javax.persistence.NamedQuery;
 @Entity
 
 @NamedQuery(name = "person.logIn", 
-        query = "SELECT u.email FROM UserAccounts u WHERE u.email LIKE :em AND u.password LIKE :pw")
+        query = "SELECT u FROM UserAccounts u WHERE u.email LIKE :em AND u.password LIKE :pw")
 
 
 

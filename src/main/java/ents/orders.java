@@ -10,12 +10,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 /**
  *
  * @author roryj
  */
 @Entity
+
+@NamedQuery(name = "orders.findByName", 
+            query = "SELECT o FROM orders o WHERE o.userEmail LIKE :name")
+
+
 public class orders implements Serializable {
 
     private static final long serialVersionUID = 1L;

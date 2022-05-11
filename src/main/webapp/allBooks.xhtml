@@ -12,10 +12,13 @@
             <h:commandButton value="Basket" action="UserBasket?faces-redirect=true"/>    
         </h:form>
         <h:form id="logIn" style="display:block; text-align:right">
+            
+            <h:commandButton value="All orders" action="AdminViewOrders?faces-redirect=true" rendered="#{searchUserBean.adminOrders()}" />
+            <h:commandButton value="My orders" action="CustomerOrders?faces-redirect=true"  />
             <h:outputText value="        #{searchUserBean.activeUser}     " />
             <h:commandButton value="Log out" action="#{searchUserBean.logOut()}" />
-            <h:commandButton value="Click to view all orders" action="AdminViewOrders?faces-redirect=true" rendered="#{searchUserBean.adminOrders()}" />
         </h:form>
+        
   
         <hr></hr>     
         

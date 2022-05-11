@@ -31,7 +31,7 @@ public class UserAccountsFacade extends AbstractFacade<UserAccounts> {
     
     
 
-    public String searchDBRecord (String email, String password) {
+    public UserAccounts searchDBRecord (String email, String password) {
 //        System.out.println(email + "hiya");
 //        UserAccounts test = em.find(UserAccounts.class, email);
 //        Sys
@@ -41,7 +41,7 @@ public class UserAccountsFacade extends AbstractFacade<UserAccounts> {
         q.setParameter("pw", password);
         try {
             System.out.println(q.getSingleResult() + " :Current user");
-            String uSn = q.getSingleResult().toString();
+            UserAccounts uSn = (UserAccounts)q.getSingleResult();
             
             return uSn;
         }catch(Exception e){
@@ -53,22 +53,5 @@ public class UserAccountsFacade extends AbstractFacade<UserAccounts> {
     } 
     
     
-    
-    public String searchAdmin (String email) {
-        System.out.println(email + "HHHHERRRRRREE LOLOLOLOLOLOL");
-        Query q = em.createNamedQuery("person.adminCheck");
-        q.setParameter("em", email);
-       
-        try {
-            System.out.println(q.getSingleResult() + " :Current user");
-            String uSn = q.getSingleResult().toString();
-            
-            return uSn;
-        }catch(Exception e){
-            System.out.println("No account");
-            return null;
-            
-        }
-        
-    } 
+
 }
