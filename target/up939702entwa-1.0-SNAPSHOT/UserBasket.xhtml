@@ -7,7 +7,7 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        
+
         <h:form id="displayBasketBooks">
             <h:dataTable value="#{addToBasketBean.showBasket()}" var="b" border="1">
                 <h:commandButton value="Proceed to checkout" action="Checkout?faces-redirect=true"/>
@@ -17,7 +17,7 @@
                 </h:column>
                 <h:column>
                     <f:facet name="header">Author</f:facet>
-                    <h:outputText value="#{b.author}"/>
+                    <h:outputText value="#{b.author}"/>                                                        <!--User's basket table-->
                 </h:column>
                 <h:column>
                     <f:facet name="header">Price</f:facet>
@@ -27,12 +27,12 @@
                     <f:facet name="ATB">user</f:facet>
                     <h:commandButton value="Remove" action="#{addToBasketBean.removeFromBasket(b)}" />
                 </h:column>
-                
+
             </h:dataTable>
-            <h:outputText value="Basket total: £ #{addToBasketBean.total()}" />
-            <h:commandButton value="Checkout" action="Checkout?faces-redirect=true"/>
+            <h:outputText value="Basket total: £ #{addToBasketBean.total()}" />                                 <!--Basket total-->
+            <h:commandButton value="Checkout" action="Checkout?faces-redirect=true"/>                           <!--Link to checkout-->
         </h:form>
-     
+
     </h:body>
 </html>
 

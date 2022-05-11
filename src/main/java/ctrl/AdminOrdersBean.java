@@ -20,19 +20,21 @@ import javax.enterprise.context.Dependent;
 @Named(value = "adminOrdersBean")
 @Dependent
 public class AdminOrdersBean {
+
     @EJB
     private AdminOrdersService aos;
+
     /**
      * Creates a new instance of AdminOrdersBean
      */
     public AdminOrdersBean() {
     }
-    
+
     private List<orders> allOrders = new ArrayList<>();
-    
+
     public List<orders> getAllOrders() {
 
-        allOrders = aos.findAllOrders();                 // Uses the sb object to then query all of the books in the db
+        allOrders = aos.findAllOrders();                 // Gets all of the admin orders and returns them
 
         return allOrders;
     }

@@ -22,15 +22,13 @@ public class AddUserBean {
      */
     public AddUserBean() {
     }
-    
-    
-    
+
     private String email;
     private String password;
-    private String delivery;
+    private String delivery;                              //Creates variables
     private String payment;
     private String name;
-    
+
     /**
      *
      * @param delivery
@@ -49,7 +47,7 @@ public class AddUserBean {
 
     /**
      *
-     * @param name
+     * @param name //Getters and setters
      */
     public void setName(String name) {
         this.name = name;
@@ -78,7 +76,7 @@ public class AddUserBean {
     public String getName() {
         return name;
     }
-   
+
     /**
      *
      * @param email
@@ -110,21 +108,19 @@ public class AddUserBean {
     public String getPassword() {
         return password;
     }
-    
-    
-    
+
     @EJB
     private AddUserService aus;
-    
+
     /**
      *
      * @return
      */
     public String doAddAccount() {
-        System.out.println(email + "This account added");
-        this.aus.setData(name, email,password,delivery,payment);
-   
+        System.out.println(email + "This account added");                       //Creates account then redirects to log in
+        this.aus.setData(name, email, password, delivery, payment);
+
         return "/Login.xhtml?faces-redirect=true";
     }
-    
+
 }

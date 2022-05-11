@@ -20,7 +20,6 @@ import pers.ordersFacade;
 @Stateless
 public class NewOrderService {
 
-    
     @EJB
     private ordersFacade of;
 
@@ -33,27 +32,20 @@ public class NewOrderService {
      * @param ID
      * @param length
      */
-    public void newOrder (String delivery, String payment, String email, double total, String ID, int length) {
+    public void newOrder(String delivery, String payment, String email, double total, String ID, int length) {
         Calendar c = Calendar.getInstance();
         long generatedLong = new Random().nextLong();
         orders o = new orders();
         o.setDateO(c.getTime());
         o.setDelivery(delivery);
-        o.setId(generatedLong);
+        o.setId(generatedLong);                                                     //creates and adds new order to db
         o.setPayment(payment);
         o.setQuantity(length);
         o.setStatus("ordered");
         o.setTotal(total);
         o.setUserEmail(email);
-        
+
         of.create(o);
-        
-        
-        
-        
-    
-       
-        
-        
+
     }
 }

@@ -20,16 +20,16 @@ import javax.enterprise.context.SessionScoped;
  */
 @Named(value = "addToBasketBean")
 @SessionScoped
-public class AddToBasketBean implements Serializable{
+public class AddToBasketBean implements Serializable {
 
     /**
      * Creates a new instance of AddToBasketBean
      */
     public AddToBasketBean() {
     }
-    
+
     private String delivery;
-    private String payment;
+    private String payment;                     //constructs variables
     private String email;
 
     /**
@@ -47,6 +47,7 @@ public class AddToBasketBean implements Serializable{
     public void setDelivery(String delivery) {
         this.delivery = delivery;
     }
+    //getters and setters
 
     /**
      *
@@ -79,7 +80,7 @@ public class AddToBasketBean implements Serializable{
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
     /**
      *
      * @return
@@ -87,14 +88,14 @@ public class AddToBasketBean implements Serializable{
     public List<books> showBasket() {
         return basket;
     }
-    
+
     /**
      *
      * @param b
      */
     public void removeFromBasket(books b) {
         basket.remove(b);
-       
+
     }
 
     /**
@@ -103,13 +104,13 @@ public class AddToBasketBean implements Serializable{
      */
     public double total() {
         double total = 0;
-        for(books b : this.basket) {
-            total += b.getPrice();
+        for (books b : this.basket) {
+            total += b.getPrice();                          //Calculates basket total
         }
         return total;
-    }  
-    private final List<books> basket = new ArrayList<>(); 
-    
+    }
+    private final List<books> basket = new ArrayList<>();
+
     /**
      *
      * @param b
@@ -117,17 +118,17 @@ public class AddToBasketBean implements Serializable{
     public void addToBasket(books b) {
 
         basket.add(b);
-        System.out.println(basket);
+        System.out.println(basket);                         //Adds item to basket list
     }
 
     /**
      *
      * @return
      */
-    public int lengthOF(){
+    public int lengthOF() {                                  // Gets the amount of items in the basket
         return basket.size();
     }
-    
+
     @EJB
     private NewOrderService nos;
 
@@ -136,12 +137,11 @@ public class AddToBasketBean implements Serializable{
      */
     public void cO() {
         double total = total();
-        int length = lengthOF();
-      
+        int length = lengthOF();                            //Creates the new order and sends to db
+
         String uniqueID = UUID.randomUUID().toString();
         this.nos.newOrder(delivery, payment, email, total, uniqueID, length);
 
-
     }
-    
+
 }

@@ -30,12 +30,13 @@ public class ordersFacade extends AbstractFacade<orders> {
     public ordersFacade() {
         super(orders.class);
     }
-    public List<orders> searchCustomerOrders (String name) {
+
+    public List<orders> searchCustomerOrders(String name) {
         Query q = em.createNamedQuery("orders.findByName");
         q.setParameter("name", name);
         List<orders> dbReturn = q.getResultList();
         return dbReturn;
-        
+
     }
-    
+
 }

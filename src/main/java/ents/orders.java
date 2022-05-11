@@ -18,9 +18,8 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 
-@NamedQuery(name = "orders.findByName", 
-            query = "SELECT o FROM orders o WHERE o.userEmail LIKE :name")
-
+@NamedQuery(name = "orders.findByName",
+        query = "SELECT o FROM orders o WHERE o.userEmail LIKE :name")
 
 public class orders implements Serializable {
 
@@ -76,15 +75,14 @@ public class orders implements Serializable {
         this.dateO = dateO;
     }
 
-
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
     }
-                                                                // corresponding getters and setters
+    // corresponding getters and setters
+
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
 
     public String getUserEmail() {
         return userEmail;
@@ -93,10 +91,6 @@ public class orders implements Serializable {
     public int getQuantity() {
         return quantity;
     }
-
-
-    
-    
 
     public Long getId() {
         return id;
@@ -130,5 +124,5 @@ public class orders implements Serializable {
     public String toString() {
         return "ents.orders[ id=" + id + " ]";
     }
-    
+
 }

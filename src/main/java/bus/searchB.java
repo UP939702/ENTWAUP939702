@@ -17,20 +17,19 @@ import pers.booksFacade;
  */
 @Stateless
 public class searchB {
-   
+
     @EJB
     private booksFacade bf;         //creates "bookFacades object for manipulation
     @EJB
     private UserAccountsFacade uaf;
-    
+
     /**
      *
      * @return
      */
-    public List<books> findAllBookNames() {  
-                                                      // run the findbook function from the facade book class
+    public List<books> findAllBookNames() {
+        // run the findbook function from the facade book class
         return bf.findAll();                                    // returns the list of books
-   }
-   
+    }
 
 }

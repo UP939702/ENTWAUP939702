@@ -20,7 +20,6 @@ public class AddUserService {
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
-    
     @EJB
     private UserAccountsFacade uaf;
 
@@ -40,19 +39,16 @@ public class AddUserService {
         ua.setName(name);
         ua.setAdmin(Boolean.FALSE);
         ua.setEmail(email);
-        ua.setPassword(password);
+        ua.setPassword(password);                                                                   //Creates entity to be stored in db
         ua.setLastDeliveryAdress(delivery);
         ua.setLastPaymentInfo(payment);
         ua.setLastLoggedIn(c.getTime());
         ua.setId(generatedLong);
-        
-        uaf.create(ua);
-      
-        
+
+        uaf.create(ua);                                                                             // calls facade with entity
+
         return "";
-        
+
     }
-    
-    
-  
+
 }

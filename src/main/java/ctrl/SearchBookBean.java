@@ -12,7 +12,6 @@ import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 
-
 /**
  *
  * @author roryj
@@ -31,7 +30,7 @@ public class SearchBookBean {
     }
 
     private List<books> allBookNames = new ArrayList<>();     //Creates list of books that should be passed into the JSF page
-    
+
     /**
      *
      * @return
@@ -39,9 +38,8 @@ public class SearchBookBean {
     public List<books> getAllBookNames() {
 
         allBookNames = sb.findAllBookNames();                 // Uses the sb object to then query all of the books in the db
-          
+
         return allBookNames;
     }
 
 }
-

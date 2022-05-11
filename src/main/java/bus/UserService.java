@@ -16,21 +16,19 @@ import pers.UserAccountsFacade;
 @Stateless
 public class UserService {
 
-    
     @EJB
     private UserAccountsFacade uaf;
-    
+
     /**
      *
      * @param email
      * @param password
      * @return
      */
-    public UserAccounts searchRecord (String email, String password) {
-        UserAccounts userEmail = uaf.searchDBRecord(email, password);
-    
+    public UserAccounts searchRecord(String email, String password) {
+        UserAccounts userEmail = uaf.searchDBRecord(email, password);           //Checks for user then returns their email
+
         return userEmail;
-    } 
-    
-    
+    }
+
 }

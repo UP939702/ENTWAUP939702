@@ -23,18 +23,19 @@ import javax.servlet.http.HttpSession;
 @Named(value = "searchUserBean")
 
 @SessionScoped
-public class SearchUserBean implements Serializable{
+public class SearchUserBean implements Serializable {
 
     /**
      * Creates a new instance of SearchUserBean
      */
     @EJB
     private UserService us;
+
     public SearchUserBean() {
     }
     private String email;
     private String password;
-    
+
     /**
      *
      * @return
@@ -66,35 +67,34 @@ public class SearchUserBean implements Serializable{
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
     /**
      *
      * @return
      */
     public String logInCheck() {
 
-        UserAccounts acceptUser = this.us.searchRecord(this.email,this.password);
+        UserAccounts acceptUser = this.us.searchRecord(this.email, this.password);
         if (acceptUser != null) {
             logIn(acceptUser.getEmail());
             System.out.println("log in success");
             return "/allBooks.xhtml?faces-redirect=true";
         } else {
             System.out.println("log in failed");
-       
+
             return "/Login.xhtml?faces-redirect=true";
         }
-        
+
     }
     private String activeUser;
-  
+
     /**
      *
      * @param user
      * @return
      */
     public String logIn(String user) {
-       
-        
+
         this.activeUser = user;
         return "";
     }
@@ -105,9 +105,9 @@ public class SearchUserBean implements Serializable{
      */
     public String logOut() {
         activeUser = null;
-    
+
         return "/Login.xhtml?faces-redirect=true";
-        
+
     }
 
     /**
@@ -125,35 +125,28 @@ public class SearchUserBean implements Serializable{
     public String getActiveUser() {
         return activeUser;
     }
-    
+
     public String adminOrders() {
-        
-       
-        if ((us.searchRecord(activeUser, password)).getAdmin() == true){
-            return "true";
-        }else{
+        if ((us.searchRecord(activeUser, password)).getAdmin() == true) {
+            return "true";                                                              //Checks to see whether user is admin or not
+        } else {
             return "false";
         }
-        
+
     }
     @EJB
     private CustomerOrdersService cos;
     /**
      * Creates a new instance of CustomerOrdersBean
      */
-  
-    
+
     private List<orders> allCOrders = new ArrayList<>();
-    
+
     public List<orders> getAllCOrders() {
 
-        allCOrders = cos.findAllCOrders(activeUser);                 // Uses the sb object to then query all of the books in the db
+        allCOrders = cos.findAllCOrders(activeUser);                 // Uses the sb object to then query all of the orders in the db
 
         return allCOrders;
     }
- 
 
-    
 }
-
-

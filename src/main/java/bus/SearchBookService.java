@@ -19,14 +19,14 @@ public class SearchBookService {
 
     @EJB
     private booksFacade bf;
-    
+
     /**
      *
      * @param name
      * @return
      */
-    public List<books> searchBookRecords (String name) {
-        List<books> returnedBooks = bf.searchForBooks(name);
+    public List<books> searchBookRecords(String name) {
+        List<books> returnedBooks = bf.searchForBooks(name);            //Searches for book then returns relevant results in a list
         return returnedBooks;
     }
 }

@@ -20,14 +20,11 @@ public class CustomerOrdersService {
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
-        @EJB
+    @EJB
     private ordersFacade of;
 
-    public List<orders> findAllCOrders(String name) {  
+    public List<orders> findAllCOrders(String name) {
         List<orders> returnedOrders = of.searchCustomerOrders(name);                                                      // run the findbook function from the facade book class
-        return returnedOrders;                                    // returns the list of books
+        return returnedOrders;                                    // returns the list of orders
+    }
 }
-}
-
-
-

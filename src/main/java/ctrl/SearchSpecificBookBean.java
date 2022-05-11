@@ -21,7 +21,7 @@ import javax.enterprise.context.RequestScoped;
 public class SearchSpecificBookBean {
 
     @EJB
-    private SearchBookService sbs ;
+    private SearchBookService sbs;
 
     /**
      *
@@ -61,17 +61,16 @@ public class SearchSpecificBookBean {
     public void setAllSearchedNames(List<books> allSearchedNames) {
         this.allSearchedNames = allSearchedNames;
     }
- 
-    
+
     private List<books> allSearchedNames = new ArrayList<>();
-    
+
     /**
      *
      * @return
      */
     public List<books> getSearchedNames() {
 
-        allSearchedNames = this.sbs.searchBookRecords(this.searchbook);
+        allSearchedNames = this.sbs.searchBookRecords(this.searchbook);   //searches for specific book passed in
         return allSearchedNames;
-    } 
+    }
 }

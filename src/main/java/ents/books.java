@@ -17,15 +17,8 @@ import javax.validation.constraints.NotNull;
  * @author roryj
  */
 @Entity
-@NamedQuery(name = "books.findByName", 
-            query = "SELECT b FROM books b WHERE b.title LIKE :name") // constructs sql query to search for a book to be used elsewhere in the program
-
-
-
-
-
-
-
+@NamedQuery(name = "books.findByName",
+        query = "SELECT b FROM books b WHERE b.title LIKE :name") // constructs sql query to search for a book to be used elsewhere in the program
 
 public class books implements Serializable {
 
@@ -53,7 +46,8 @@ public class books implements Serializable {
     public int getQuantity() {
         return quantity;
     }
-                                                        // corresponding getters and setters
+    // corresponding getters and setters
+
     public String getTitle() {
         return title;
     }
@@ -97,7 +91,6 @@ public class books implements Serializable {
     public void setPrice(Long price) {
         this.price = price;
     }
-    
 
     public Long getId() {
         return id;
@@ -131,5 +124,5 @@ public class books implements Serializable {
     public String toString() {
         return "ents.books[ id=" + id + " ]";
     }
-    
+
 }

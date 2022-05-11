@@ -19,16 +19,11 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 
-@NamedQuery(name = "person.logIn", 
+@NamedQuery(name = "person.logIn",
         query = "SELECT u FROM UserAccounts u WHERE u.email LIKE :em AND u.password LIKE :pw")
 
-
-
-@NamedQuery(name = "admin.adminCheck", 
+@NamedQuery(name = "admin.adminCheck",
         query = "SELECT u.admin FROM UserAccounts u WHERE u.email LIKE :em ")
-
-
-
 
 public class UserAccounts implements Serializable {
 
@@ -55,7 +50,8 @@ public class UserAccounts implements Serializable {
     public String getPassword() {
         return password;
     }
-                                                                        // corresponding getters and setters
+    // corresponding getters and setters
+
     public String getLastDeliveryAdress() {
         return lastDeliveryAdress;
     }
@@ -99,7 +95,6 @@ public class UserAccounts implements Serializable {
     public void setAdmin(Boolean admin) {
         this.admin = admin;
     }
-    
 
     public Long getId() {
         return id;
@@ -133,5 +128,5 @@ public class UserAccounts implements Serializable {
     public String toString() {
         return "ents.user[ id=" + id + " ]";
     }
-    
+
 }

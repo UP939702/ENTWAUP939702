@@ -15,7 +15,7 @@ import javax.persistence.Query;
  *
  * @author roryj
  */
-@Stateless  
+@Stateless
 public class booksFacade extends AbstractFacade<books> {
 
     @PersistenceContext(unitName = "bookP")
@@ -40,14 +40,12 @@ public class booksFacade extends AbstractFacade<books> {
      * @param name
      * @return
      */
-    public List<books> searchForBooks (String name) {
+    public List<books> searchForBooks(String name) {
         Query q = em.createNamedQuery("books.findByName");
         q.setParameter("name", name);
         List<books> dbReturn = q.getResultList();
         return dbReturn;
-        
+
     }
-    
-    
-    
+
 }

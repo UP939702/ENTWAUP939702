@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
-      
+
     <h:head>
         <title>Login Page</title>
 
@@ -15,7 +15,7 @@
             <br></br>
             <h:outputText value="Email" />
             <br></br>
-            <h:inputText id="Email" value="#{searchUserBean.email}" /> 
+            <h:inputText id="Email" value="#{searchUserBean.email}" />                              <!--Log in form-->
             <br></br><br></br>
             <h:outputText value="Password" />
             <br></br>
@@ -23,7 +23,7 @@
             <br></br><br></br>
             <h:commandButton value="Login"  action="#{searchUserBean.logInCheck()}"/>
             <br></br><br></br>  
-            <h:commandButton value="Create account" action="SignUp?faces-redirect=true"/>
+            <h:commandButton value="Create account" action="SignUp?faces-redirect=true"/>          
         </h:form>
     </h:body>
 </html>

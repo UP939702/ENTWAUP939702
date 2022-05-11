@@ -9,13 +9,13 @@
     <h:body>
         <h:form id="displayBasketBooks">
             <h:dataTable value="#{addToBasketBean.showBasket()}" var="b" border="1">
-               
+
                 <h:column>
                     <f:facet name="header">Book name</f:facet>  
                     <h:outputText value="#{b.title}"/>
                 </h:column>
                 <h:column>
-                    <f:facet name="header">Author</f:facet>
+                    <f:facet name="header">Author</f:facet>                                             <!-- User's items basket-->
                     <h:outputText value="#{b.author}"/>
                 </h:column>
                 <h:column>
@@ -27,7 +27,7 @@
                     <h:commandButton value="Remove" action="#{addToBasketBean.removeFromBasket(b)}" />
                 </h:column>
             </h:dataTable>
-            
+
         </h:form>
         <h:form id="UserInfo" >
             <br></br><br></br>
@@ -36,7 +36,7 @@
             <h:inputText id="delivery" value="#{addToBasketBean.delivery}" /> 
             <br></br><br></br>
             <h:outputText value="Payment information" />
-            <br></br> <br></br> 
+            <br></br> <br></br>                                                                          <!--input form to gather user info-->
             <h:inputText id="payment" value="#{addToBasketBean.payment}" /> 
             <br></br><br></br>
             <h:outputText value="Email" />
