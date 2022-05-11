@@ -34,6 +34,12 @@ public class booksFacade extends AbstractFacade<books> {
 //        q.setParameter("name", a);                                      // assigns the passed variable to "name" for the command
 //        return q.getResultList();                                       // Uses inbuilt function to return the list of results from db
 //    }
+
+    /**
+     *
+     * @param name
+     * @return
+     */
     public List<books> searchForBooks (String name) {
         Query q = em.createNamedQuery("books.findByName");
         q.setParameter("name", name);

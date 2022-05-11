@@ -23,6 +23,16 @@ public class AddUserService {
     
     @EJB
     private UserAccountsFacade uaf;
+
+    /**
+     *
+     * @param name
+     * @param email
+     * @param password
+     * @param delivery
+     * @param payment
+     * @return
+     */
     public String setData(String name, String email, String password, String delivery, String payment) {
         Calendar c = Calendar.getInstance();
         long generatedLong = new Random().nextLong();

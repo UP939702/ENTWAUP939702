@@ -23,17 +23,11 @@ public class searchB {
     @EJB
     private UserAccountsFacade uaf;
     
-//    public String processBook(String bookName) {
-//        bookName = "updated to " + bookName;
-//        books b = new books();
-//        b.setTitle(bookName);
-//        bf.create(b);
-//        return bookName;
-//    }
-    
-    
-    
-    public List<books> findAllBookNames() {   // Uses the bf object created and then attemps to 
+    /**
+     *
+     * @return
+     */
+    public List<books> findAllBookNames() {  
                                                       // run the findbook function from the facade book class
         return bf.findAll();                                    // returns the list of books
    }

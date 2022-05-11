@@ -53,4 +53,22 @@ public class UserAccountsFacade extends AbstractFacade<UserAccounts> {
     } 
     
     
+    
+    public String searchAdmin (String email) {
+        System.out.println(email + "HHHHERRRRRREE LOLOLOLOLOLOL");
+        Query q = em.createNamedQuery("person.adminCheck");
+        q.setParameter("em", email);
+       
+        try {
+            System.out.println(q.getSingleResult() + " :Current user");
+            String uSn = q.getSingleResult().toString();
+            
+            return uSn;
+        }catch(Exception e){
+            System.out.println("No account");
+            return null;
+            
+        }
+        
+    } 
 }

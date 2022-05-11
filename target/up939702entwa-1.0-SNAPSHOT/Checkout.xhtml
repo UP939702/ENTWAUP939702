@@ -29,11 +29,20 @@
             </h:dataTable>
             
         </h:form>
-        <h:form id="UserInfo">
-           
+        <h:form id="UserInfo" >
+            <br></br><br></br>
+            <h:outputText value="Delivery address" />
+            <br></br><br></br>
             <h:inputText id="delivery" value="#{addToBasketBean.delivery}" /> 
+            <br></br><br></br>
+            <h:outputText value="Payment information" />
+            <br></br> <br></br> 
             <h:inputText id="payment" value="#{addToBasketBean.payment}" /> 
+            <br></br><br></br>
+            <h:outputText value="Email" />
+            <br></br><br></br> 
             <h:inputText id="email" value="#{addToBasketBean.email}" /> 
+            <br></br><br></br>
             <h:commandButton value="Pay" action="#{addToBasketBean.cO()}" />
         </h:form>
     </h:body>

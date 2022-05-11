@@ -16,24 +16,25 @@ import pers.UserAccountsFacade;
 @Stateless
 public class UserService {
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
-    
-    
-    
-    
-//    
-//    public String doesUserExist (UserAccounts email) {
-//        
-//    }
     
     @EJB
     private UserAccountsFacade uaf;
     
-    
+    /**
+     *
+     * @param email
+     * @param password
+     * @return
+     */
     public String searchRecord (String email, String password) {
         String userEmail = uaf.searchDBRecord(email, password);
     
         return userEmail;
     } 
+    
+    public String checkAdmin(String email) {
+        System.out.println(email + "WOW this sux");
+        String status = uaf.searchAdmin(email);
+        return status;
+    }
 }

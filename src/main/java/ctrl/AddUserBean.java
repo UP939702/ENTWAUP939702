@@ -31,43 +31,82 @@ public class AddUserBean {
     private String payment;
     private String name;
     
+    /**
+     *
+     * @param delivery
+     */
     public void setDelivery(String delivery) {
         this.delivery = delivery;
     }
 
+    /**
+     *
+     * @param payment
+     */
     public void setPayment(String payment) {
         this.payment = payment;
     }
 
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDelivery() {
         return delivery;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPayment() {
         return payment;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
    
-
+    /**
+     *
+     * @param email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     *
+     * @param password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPassword() {
         return password;
     }
@@ -77,11 +116,15 @@ public class AddUserBean {
     @EJB
     private AddUserService aus;
     
+    /**
+     *
+     * @return
+     */
     public String doAddAccount() {
         System.out.println(email + "This account added");
         this.aus.setData(name, email,password,delivery,payment);
    
-        return "";
+        return "/Login.xhtml?faces-redirect=true";
     }
     
 }

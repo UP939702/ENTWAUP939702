@@ -23,7 +23,17 @@ public class NewOrderService {
     
     @EJB
     private ordersFacade of;
-    public void newOrder (String delivery, String payment, String email, double total, String ID) {
+
+    /**
+     *
+     * @param delivery
+     * @param payment
+     * @param email
+     * @param total
+     * @param ID
+     * @param length
+     */
+    public void newOrder (String delivery, String payment, String email, double total, String ID, int length) {
         Calendar c = Calendar.getInstance();
         long generatedLong = new Random().nextLong();
         orders o = new orders();
@@ -31,7 +41,7 @@ public class NewOrderService {
         o.setDelivery(delivery);
         o.setId(generatedLong);
         o.setPayment(payment);
-        o.setQuantity(1);
+        o.setQuantity(length);
         o.setStatus("ordered");
         o.setTotal(total);
         o.setUserEmail(email);

@@ -19,7 +19,15 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 
-@NamedQuery(name = "person.logIn", query = "SELECT u.email FROM UserAccounts u WHERE u.email LIKE :em AND u.password LIKE :pw")
+@NamedQuery(name = "person.logIn", 
+        query = "SELECT u.email FROM UserAccounts u WHERE u.email LIKE :em AND u.password LIKE :pw")
+
+
+
+@NamedQuery(name = "admin.adminCheck", 
+        query = "SELECT u.admin FROM UserAccounts u WHERE u.email LIKE :em ")
+
+
 
 
 public class UserAccounts implements Serializable {

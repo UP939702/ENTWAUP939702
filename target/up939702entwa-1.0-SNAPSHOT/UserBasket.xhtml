@@ -30,7 +30,9 @@
                 
             </h:dataTable>
             <h:outputText value="Basket total: £ #{addToBasketBean.total()}" />
+            <h:commandButton value="Checkout" action="Checkout?faces-redirect=true"/>
         </h:form>
+     
     </h:body>
 </html>
 

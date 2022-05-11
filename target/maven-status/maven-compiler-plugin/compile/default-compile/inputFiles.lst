@@ -3,6 +3,7 @@ C:\Users\roryj\Documents\NetBeansProjects\ENTWAUP939702\src\main\java\ctrl\AddTo
 C:\Users\roryj\Documents\NetBeansProjects\ENTWAUP939702\src\main\java\pers\AbstractFacade.java
 C:\Users\roryj\Documents\NetBeansProjects\ENTWAUP939702\src\main\java\ctrl\AddUserBean.java
 C:\Users\roryj\Documents\NetBeansProjects\ENTWAUP939702\src\main\java\bus\SearchBookService.java
+C:\Users\roryj\Documents\NetBeansProjects\ENTWAUP939702\src\main\java\bus\AdminOrdersService.java
 C:\Users\roryj\Documents\NetBeansProjects\ENTWAUP939702\src\main\java\ents\UserAccounts.java
 C:\Users\roryj\Documents\NetBeansProjects\ENTWAUP939702\src\main\java\pers\ordersFacade.java
 C:\Users\roryj\Documents\NetBeansProjects\ENTWAUP939702\src\main\java\bus\NewOrderService.java
@@ -11,6 +12,7 @@ C:\Users\roryj\Documents\NetBeansProjects\ENTWAUP939702\src\main\java\bus\UserSe
 C:\Users\roryj\Documents\NetBeansProjects\ENTWAUP939702\src\main\java\ctrl\SearchBookBean.java
 C:\Users\roryj\Documents\NetBeansProjects\ENTWAUP939702\src\main\java\ctrl\SearchUserBean.java
 C:\Users\roryj\Documents\NetBeansProjects\ENTWAUP939702\src\main\java\bus\AddUserService.java
+C:\Users\roryj\Documents\NetBeansProjects\ENTWAUP939702\src\main\java\ctrl\AdminOrdersBean.java
 C:\Users\roryj\Documents\NetBeansProjects\ENTWAUP939702\src\main\java\com\mycompany\up939702entwa\resources\JavaEE8Resource.java
 C:\Users\roryj\Documents\NetBeansProjects\ENTWAUP939702\src\main\java\ents\orders.java
 C:\Users\roryj\Documents\NetBeansProjects\ENTWAUP939702\src\main\java\com\mycompany\up939702entwa\JAXRSConfiguration.java

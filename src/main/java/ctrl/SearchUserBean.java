@@ -30,37 +30,49 @@ public class SearchUserBean implements Serializable{
     private String email;
     private String password;
     
-
+    /**
+     *
+     * @return
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     *
+     * @param email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     *
+     * @param password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
     
-//    
-//    public String doFindAccount(String email) {
-//        String account = us.doesUserExist(email);
-//        return account;
-//    }
-
-    
+    /**
+     *
+     * @return
+     */
     public String logInCheck() {
 
         String acceptUser = this.us.searchRecord(this.email,this.password);
         if (acceptUser != null) {
             logIn(acceptUser);
             System.out.println("log in success");
-            return "/start.xhtml?faces-redirect=true";
+            return "/allBooks.xhtml?faces-redirect=true";
         } else {
             System.out.println("log in failed");
        
@@ -70,7 +82,11 @@ public class SearchUserBean implements Serializable{
     }
     private String activeUser;
   
-    
+    /**
+     *
+     * @param user
+     * @return
+     */
     public String logIn(String user) {
        
         
@@ -78,6 +94,10 @@ public class SearchUserBean implements Serializable{
         return "";
     }
 
+    /**
+     *
+     * @return
+     */
     public String logOut() {
         activeUser = null;
     
@@ -85,12 +105,34 @@ public class SearchUserBean implements Serializable{
         
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isLoggedIn() {
         return activeUser != null;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getActiveUser() {
         return activeUser;
+    }
+    
+    public String adminOrders() {
+        System.out.println(activeUser + "BABY BOY");
+        
+        
+        String acceptUser = us.checkAdmin(activeUser);
+        System.out.println(acceptUser);
+        if (acceptUser == "true"){
+            return "true";
+        }else{
+            return "false";
+        }
+        
     }
  
 

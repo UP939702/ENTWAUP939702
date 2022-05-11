@@ -21,18 +21,21 @@ import javax.enterprise.context.RequestScoped;
 @RequestScoped
 public class SearchBookBean {
 
- 
     @EJB
     private searchB sb;                     // Creates new searchBeasn object called "sb"
+
+    /**
+     *
+     */
     public SearchBookBean() {
     }
-   
-   
-    
-    
-    
+
     private List<books> allBookNames = new ArrayList<>();     //Creates list of books that should be passed into the JSF page
     
+    /**
+     *
+     * @return
+     */
     public List<books> getAllBookNames() {
 
         allBookNames = sb.findAllBookNames();                 // Uses the sb object to then query all of the books in the db

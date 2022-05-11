@@ -4,29 +4,25 @@
  */
 package bus;
 
-import ents.books;
+import ents.orders;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import pers.booksFacade;
+import pers.ordersFacade;
 
 /**
  *
  * @author roryj
  */
 @Stateless
-public class SearchBookService {
+public class AdminOrdersService {
 
     @EJB
-    private booksFacade bf;
+    private ordersFacade of;
+
+    public List<orders> findAllOrders() {  
+                                                      // run the findbook function from the facade book class
+        return of.findAll();                                    // returns the list of books
+}
     
-    /**
-     *
-     * @param name
-     * @return
-     */
-    public List<books> searchBookRecords (String name) {
-        List<books> returnedBooks = bf.searchForBooks(name);
-        return returnedBooks;
-    }
 }

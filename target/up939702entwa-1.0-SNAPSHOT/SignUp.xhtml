@@ -6,16 +6,31 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <h:form id="SignUpForm">
-            <h:inputText id="name" value="#{addUserBean.name}" /> 
-            <h:inputText id="Email" value="#{addUserBean.email}" /> 
-            <h:inputText id="Password" value="#{addUserBean.password}" />
-            <h:inputText id="delivery" value="#{addUserBean.delivery}" /> 
-            <h:inputText id="payment" value="#{addUserBean.payment}" /> 
-      
-
+        <h:form id="SignUpForm" style="display:block; text-align:center">
+            <br></br>
+            <h1>Sign up</h1>
             
-            <h:commandButton value="LoginButton"  action="#{addUserBean.doAddAccount()}"/>
+            <h:outputText value="Name" />
+            <br></br><br></br> 
+            <h:inputText id="name" value="#{addUserBean.name}" /> 
+            <br></br><br></br> 
+            <h:outputText value="Email" />
+            <br></br><br></br> 
+            <h:inputText id="Email" value="#{addUserBean.email}" /> 
+            <br></br><br></br> 
+            <h:outputText value="Password" />
+            <br></br>     <br></br>        
+            <h:inputText id="Password" value="#{addUserBean.password}" />
+            <br></br><br></br> 
+            <h:outputText value="Delivery address" />
+            <br></br> <br></br> 
+            <h:inputText id="delivery" value="#{addUserBean.delivery}" /> 
+            <br></br><br></br> 
+            <h:outputText value="Payment information" />
+            <br></br> <br></br> 
+            <h:inputText id="payment" value="#{addUserBean.payment}" /> 
+            <br></br> <br></br> 
+            <h:commandButton value="Create account"  action="#{addUserBean.doAddAccount()}"/>
         </h:form>
     </h:body>
 </html>

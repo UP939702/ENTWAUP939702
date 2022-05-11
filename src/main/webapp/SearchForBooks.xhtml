@@ -7,21 +7,13 @@
         <title>Facelet Title</title>
     </h:head>
         <h:body>
- 
-        <h:form id="searchForm">
-
-
-           
-            
-            
-            <h:inputText id="Email" value="#{searchUserBean.email}" /> 
-
-          
-        </h:form>
-        <h:form id="displaySearchBooks">
+        <h:form id="displaySearchBooks" >
             <h:inputText id="search" value="#{searchSpecificBookBean.searchbook}" />
-            <h:commandButton value="LoginButton"  action="#{searchSpecificBookBean.getSearchedNames()}"/>
-            <h:dataTable value="#{searchSpecificBookBean.searchedNames}" var="b" border="1">
+            <h:commandButton value="Search"  action="#{searchSpecificBookBean.getSearchedNames()}"/>
+            <h:commandButton value="Catalogue" action="allBooks?faces-redirect=true"/>
+            <h:commandButton value="Basket" action="UserBasket?faces-redirect=true"/>
+            <br></br><br></br>
+            <h:dataTable value="#{searchSpecificBookBean.searchedNames}" var="b" border="1" >
                 <h:column>
                     <f:facet name="header">Book names</f:facet>  
                     <h:outputText value="#{b.title}"/>
@@ -34,8 +26,8 @@
                     <f:facet name="header">Price</f:facet>
                     <h:outputText value="#{b.price}"/>
                 </h:column>
-                <h:column>
-                
+                <h:column>     
+                    <f:facet name="p"></f:facet>
                     <h:commandButton value="Add To Basket" action="#{addToBasketBean.addToBasket(b)}" />
                 </h:column>
             </h:dataTable>

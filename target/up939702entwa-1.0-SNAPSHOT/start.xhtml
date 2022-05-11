@@ -1,44 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Stumps</title>
+        <title>Welcome</title>
     </h:head>
     <h:body>
-        <h:form id="searchForm">
-            <h:inputText id="bookSearchbar"/> 
-            <h:commandButton value="Search for book" />
-            <h:outputText value="#{searchUserBean.activeUser}" />
-            <h:commandButton value="Log out" action="#{searchUserBean.logOut()}" />
-            
-        </h:form>
-  
-        <hr></hr>
-        
-        
-        
-        <h:form id="displayAllBooks">
-            <h:commandButton value="Basket" action="UserBasket?faces-redirect=true"/>
-            <h:dataTable value="#{searchBookBean.allBookNames}" var="b" border="1">
-                <h:column>
-                    <f:facet name="header">Book names</f:facet>  
-                    <h:outputText value="#{b.title}"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Author</f:facet>
-                    <h:outputText value="#{b.author}"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Price</f:facet>
-                    <h:outputText value="#{b.price}"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="ATB">user</f:facet>
-                    <h:commandButton value="Add To Basket" action="#{addToBasketBean.addToBasket(b)}" />
-                </h:column>
-            </h:dataTable>
+        <h:form id="LoginForm" style="display:block; text-align:center">
+            <br></br>
+            <h1>Welcome</h1>
+            <br></br>
+            <h:commandButton value="Click to enter" action="Login?faces-redirect=true" />
         </h:form>
     </h:body>
 </html>

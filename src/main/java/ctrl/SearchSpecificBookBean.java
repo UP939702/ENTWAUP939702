@@ -22,39 +22,56 @@ public class SearchSpecificBookBean {
 
     @EJB
     private SearchBookService sbs ;
+
+    /**
+     *
+     */
     public SearchSpecificBookBean() {
     }
     private String searchbook;
 
+    /**
+     *
+     * @return
+     */
     public String getSearchbook() {
         return searchbook;
     }
 
+    /**
+     *
+     * @param searchbook
+     */
     public void setSearchbook(String searchbook) {
         this.searchbook = searchbook;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<books> getAllSearchedNames() {
         return allSearchedNames;
     }
 
+    /**
+     *
+     * @param allSearchedNames
+     */
     public void setAllSearchedNames(List<books> allSearchedNames) {
         this.allSearchedNames = allSearchedNames;
     }
-    
-    
-    
-    
-    
-    
+ 
     
     private List<books> allSearchedNames = new ArrayList<>();
     
+    /**
+     *
+     * @return
+     */
     public List<books> getSearchedNames() {
 
         allSearchedNames = this.sbs.searchBookRecords(this.searchbook);
-        
-
         return allSearchedNames;
     } 
 }
